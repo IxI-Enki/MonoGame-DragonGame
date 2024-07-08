@@ -13,10 +13,38 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin File.spritefont
+#begin font14px.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:File.spritefont;font14px
+/build:font14px.spritefont;font14px
+
+#begin font16px.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font16px.spritefont;font16px
+
+#begin font18px.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font18px.spritefont;font18px
+
+#begin font20px.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font20px.spritefont;font20px
+
+#begin fontB20px.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontB20px.spritefont;fontB30px
 
