@@ -41,6 +41,34 @@
 /processorParam:TextureFormat=Compressed
 /build:font20px.spritefont;font20px
 
+#begin fontB14.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontB14.spritefont;fontB14px
+
+#begin fontB16.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontB16.spritefont;fontB16px
+
+#begin fontB18.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontB18.spritefont;fontB18px
+
+#begin fontB20.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontB20.spritefont;fontB20px
+
 #begin fontB20px.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

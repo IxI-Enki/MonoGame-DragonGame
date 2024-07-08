@@ -4,12 +4,7 @@
   {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private SpriteFont 
-      _font14px,
-      _font16px,
-      _font18px,
-      _font20px,
-      _fontB30px;
+
     private WindowManager _windowManager;
     private GameWindow _window;
 
@@ -18,12 +13,11 @@
       _graphics = new(this);
       Content.RootDirectory = "Content";
       IsMouseVisible = true;
+      _window = Window;
     }
 
     protected override void Initialize()
     {
-      _window = Window;
-
       _windowManager = new(ref _window, ref _graphics);
 
       base.Initialize();
@@ -32,13 +26,7 @@
     protected override void LoadContent()
     {
       _spriteBatch = new(GraphicsDevice);
-      _spriteBatch.Begin();
-      _font14px = Content.Load<SpriteFont>("font14px");
-      _font16px = Content.Load<SpriteFont>("font16px");
-      _font18px = Content.Load<SpriteFont>("font18px");
-      _font20px = Content.Load<SpriteFont>("font20px");
-      _fontB30px = Content.Load<SpriteFont>("fontB30px");
-      _spriteBatch.End();
+      Font.Load(this);
     }
 
     protected override void Update(GameTime gameTime)
@@ -55,12 +43,20 @@
       GraphicsDevice.Clear(Color.Black);
 
       _spriteBatch.Begin();
-      _spriteBatch.DrawString(_font14px,  "[FONT-A px 14]", new Vector2(10, 10), Color.Yellow);
-      _spriteBatch.DrawString(_font16px,  "[FONT-A px 16]", new Vector2(10, 24), Color.Orange);
-      _spriteBatch.DrawString(_font18px,  "[FONT-A px 18]", new Vector2(10, 40), Color.DarkOrange);
-      _spriteBatch.DrawString(_font20px,  "[FONT-A px 20]", new Vector2(10, 60), Color.OrangeRed);
-      _spriteBatch.DrawString(_fontB30px, "[FONT-B px 30]", new Vector2(10, 90), Color.Green);
-      _spriteBatch.DrawString(_fontB30px, "Font-test", new Vector2(10, 120), Color.LightGreen);
+      _spriteBatch.DrawString(Font.A14px, "[ FONT-A px 14 ]", new Vector2(10, 10), Color.Yellow);
+      _spriteBatch.DrawString(Font.A16px, "[ FONT-A px 16 ]", new Vector2(10, 24), Color.Orange);
+      _spriteBatch.DrawString(Font.A18px, "[ FONT-A px 18 ]", new Vector2(10, 40), Color.DarkOrange);
+      _spriteBatch.DrawString(Font.A20px, "[ FONT-A px 20 ]", new Vector2(10, 60), Color.OrangeRed);
+      _spriteBatch.DrawString(Font.B30px, "[ FONT-B px 30 ]", new Vector2(10, 90), Color.Green);
+      _spriteBatch.DrawString(Font.B30px, "Font-test "
+        //─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╌╍╎╏═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╭╮╯╰╱╲╳╴╵╶╷╸╹╺╻╼╽╾╿
+        , new Vector2(10, 120), Color.LightGreen);
+    
+      
+      _spriteBatch.DrawString(Font.B20px, "[ FONT-B px 20 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 140), Color.OrangeRed);
+      _spriteBatch.DrawString(Font.B18px, "[ FONT-B px 18 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 158), Color.OrangeRed);
+      _spriteBatch.DrawString(Font.B16px, "[ FONT-B px 16 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 174), Color.OrangeRed);
+      _spriteBatch.DrawString(Font.B14px, "[ FONT-B px 14 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 188), Color.OrangeRed);
       _spriteBatch.End();
 
 
