@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DragonGame/DragonGame.Logic/obj
+/DragonGame/DragonGame.Logic/.config
+/.vs
+/DragonGame/DragonGame.Logic/.vs/DragonGame.Logic

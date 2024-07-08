@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonGame.Logic", "DragonGame.Logic.csproj", "{54BA6D8B-DB35-4A29-9B73-B5130AA5D30A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54BA6D8B-DB35-4A29-9B73-B5130AA5D30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BA6D8B-DB35-4A29-9B73-B5130AA5D30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BA6D8B-DB35-4A29-9B73-B5130AA5D30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BA6D8B-DB35-4A29-9B73-B5130AA5D30A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C412B7A8-083A-4B83-899D-77631BDF3C67}
+	EndGlobalSection
+EndGlobal
