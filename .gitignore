@@ -6,3 +6,5 @@
 /DragonGame/DragonGame.Logic/.config
 /.vs
 /DragonGame/DragonGame.Logic/.vs/DragonGame.Logic
+/DragonGame/DragonGame.Logic/bin/Debug/net6.0
+/DragonGame/DragonGame.Logic/Content/obj/DesktopGL/net6.0/Content

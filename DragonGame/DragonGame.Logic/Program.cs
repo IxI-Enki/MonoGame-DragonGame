@@ -1,3 +1,3 @@
-﻿
-using var game = new DragonGame.Logic.Game1();
+﻿// ENTRY POINT:
+using var game = new DragonGame.Logic.DragonGame();
 game.Run();
