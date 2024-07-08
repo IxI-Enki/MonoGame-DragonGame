@@ -10,6 +10,8 @@
       _font18px,
       _font20px,
       _fontB30px;
+    private WindowManager _windowManager;
+    private GameWindow _window;
 
     public DragonGame()
     {
@@ -20,6 +22,10 @@
 
     protected override void Initialize()
     {
+      _window = Window;
+
+      _windowManager = new(ref _window, ref _graphics);
+
       base.Initialize();
     }
 
@@ -38,6 +44,9 @@
     protected override void Update(GameTime gameTime)
     {
       if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
+
+      if (Keyboard.GetState().IsKeyDown(Keys.F11)) _windowManager.ToggleBorderless();
+
       base.Update(gameTime);
     }
 
