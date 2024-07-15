@@ -6,6 +6,7 @@
   internal float Health { get; set; }
 }
 
+
 class Entity : IEntity
 {
   private Vector2 _pos;
