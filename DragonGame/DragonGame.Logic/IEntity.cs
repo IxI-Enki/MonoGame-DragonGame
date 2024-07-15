@@ -1,5 +1,4 @@
-﻿
-interface IEntity
+﻿interface IEntity
 {
   public Vector2 Position { get; set; }
   public char Sprite { get; set; }
