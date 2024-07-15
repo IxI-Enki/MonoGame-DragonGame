@@ -1,8 +1,8 @@
-# NOTES
+## NOTES
 
-## 2 DO:
 
 ### brainstorming  
+---  
 
 - window manager:
   > screen-size, scaling..  
