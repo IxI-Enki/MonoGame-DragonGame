@@ -1,10 +1,16 @@
 # NOTES
----  
 
 ## 2 DO:
----  
 
-- crisp controls
-- tileable maps
+### brainstorming  
+
+- entities:  
+  > hero, npcs, enemies   
+
+- input manager:  
+  > crisp controls!  
+
+- tile manager:  
+  > tileable maps  
+
 - objectives
-- 
