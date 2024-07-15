@@ -1,4 +1,6 @@
-﻿  [TestClass()]
+﻿namespace DragonGame.LogicTests
+{
+  [TestClass()]
   public class DragonGameTests
   {
 
@@ -9,4 +11,5 @@
     {
       Assert.Fail();
     }
+  }
 }

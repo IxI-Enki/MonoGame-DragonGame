@@ -1,4 +1,4 @@
-﻿internal class WindowManager
+﻿public  class WindowManager
 {
   public WindowManager(ref GameWindow window, ref GraphicsDeviceManager graphics)
   {
