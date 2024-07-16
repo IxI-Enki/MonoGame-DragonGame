@@ -24,7 +24,6 @@
     A20px
       = dragonGame.Content.Load
         <SpriteFont>("font20px");
-
     B14px
       = dragonGame.Content.Load
         <SpriteFont>("fontB14px");

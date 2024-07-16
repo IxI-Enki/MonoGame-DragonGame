@@ -93,10 +93,10 @@
       Color.OrangeRed);
 
     _spriteBatch.DrawString(Font.B30px, _hero.entity.Sprite.ToString(), _hero.entity.Position, Color.Red);
-
-
     _spriteBatch.Draw(TextureManager.Textures[0], new Rectangle(10, 10, 64, 192), Color.White);
     _spriteBatch.End();
+
+    TextureManager.DrawCircle(96, new Vector2(30f, 30f), Color.White, _spriteBatch);
 
     base.Draw(gameTime);
   }
