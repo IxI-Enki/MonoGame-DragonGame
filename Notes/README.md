@@ -5,7 +5,14 @@
 ---  
 
 - window manager:
-  > screen-size, scaling..  
+  > screen-size,
+  > scaling..
+  > ```c#
+  >    // to scale textures in a non-interpolative (blurred) manner, use this
+  >    // SamplerState.PointClamp
+  >    // to scale crisp textures  
+  >    _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+  > ```  
 
 - input manager:  
   > crisp controls!  
