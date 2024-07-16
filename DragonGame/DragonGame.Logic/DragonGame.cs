@@ -4,6 +4,8 @@
   private SpriteBatch _spriteBatch;
 
   private WindowManager _windowManager;
+  private TileManager _tileManager;
+
   private GameWindow _window;
 
   private Hero _hero
@@ -20,7 +22,6 @@
   protected override void Initialize()
   {
     _windowManager = new(ref _window, ref _graphics);
-
     base.Initialize();
   }
 
@@ -28,28 +29,31 @@
   {
     _spriteBatch = new(GraphicsDevice);
     Font.Load(this);
+
+    TextureManager.Load(this);
+    _tileManager = new();
   }
 
   protected override void Update(GameTime gameTime)
   {
     if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
 
-    if (Keyboard.GetState().IsKeyDown(Keys.Up)) 
+    if (Keyboard.GetState().IsKeyDown(Keys.Up))
       _hero.entity.Position
         = new Vector2(
           _hero.entity.Position.X,
           _hero.entity.Position.Y - 10);
-    if (Keyboard.GetState().IsKeyDown(Keys.Down)) 
+    if (Keyboard.GetState().IsKeyDown(Keys.Down))
       _hero.entity.Position
         = new Vector2(
           _hero.entity.Position.X,
           _hero.entity.Position.Y + 10);
-    if (Keyboard.GetState().IsKeyDown(Keys.Left)) 
+    if (Keyboard.GetState().IsKeyDown(Keys.Left))
       _hero.entity.Position
         = new Vector2(
           _hero.entity.Position.X - 10,
           _hero.entity.Position.Y);
-    if (Keyboard.GetState().IsKeyDown(Keys.Right)) 
+    if (Keyboard.GetState().IsKeyDown(Keys.Right))
       _hero.entity.Position
         = new Vector2(
           _hero.entity.Position.X + 10,
@@ -65,7 +69,9 @@
   {
     GraphicsDevice.Clear(Color.Black);
 
-    _spriteBatch.Begin();
+    // USE THIS TO SAMPLE PIXEL PERFECT
+    _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+
     /*
     _spriteBatch.DrawString(Font.A14px, "[ FONT-A px 14 ]", new Vector2(10, 10), Color.Yellow);
     _spriteBatch.DrawString(Font.A16px, "[ FONT-A px 16 ]", new Vector2(10, 24), Color.Orange);
@@ -88,6 +94,8 @@
 
     _spriteBatch.DrawString(Font.B30px, _hero.entity.Sprite.ToString(), _hero.entity.Position, Color.Red);
 
+
+    _spriteBatch.Draw(TextureManager.Textures[0], new Rectangle(10, 10, 64, 192), Color.White);
     _spriteBatch.End();
 
     base.Draw(gameTime);
