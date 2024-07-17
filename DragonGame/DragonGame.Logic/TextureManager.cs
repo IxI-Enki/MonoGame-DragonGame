@@ -48,11 +48,26 @@ internal class TextureManager
     spriteBatch.Begin(samplerState: SamplerState.PointClamp);
     for (int h = 0; h < WindowManager.Window.ClientBounds.Height; h += scaling)
       for (int w = 0; w < WindowManager.Window.ClientBounds.Width; w += scaling)
-        if (Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling)
-          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Olive);
+      {
+        if (HeroInSquare(w, h))
+          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.DarkOrange);
+        if (MouseInSquare(w, h))
+          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Orange);
         else
           spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Gray);
+      }
     spriteBatch.End();
 
   }
+
+  private static bool HeroInSquare(int w, int h)
+    => Hero.entity.Position.X >= w && Hero.entity.Position.X < w + scaling
+    && Hero.entity.Position.Y >= h && Hero.entity.Position.Y < h + scaling;
+
+
+  private static bool MouseInSquare(int w, int h)
+    => Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling
+    && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling;
+
+
 }

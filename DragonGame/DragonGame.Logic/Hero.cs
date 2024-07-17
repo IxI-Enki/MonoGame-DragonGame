@@ -1,9 +1,9 @@
-﻿internal class Hero
+﻿internal static class Hero
 {
-  public Entity entity;
+  public static Entity entity;
 
-  public Hero() 
-    => entity = new()
+  static Hero()
+  => entity = new()
   {
     Position = new Vector2(20f, 20f),
     Sprite = 'x'

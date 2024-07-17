@@ -8,8 +8,8 @@
 
   private GameWindow _window;
 
-  private Hero _hero
-    = new();
+  
+   
 
   public DragonGame()
   {
@@ -39,25 +39,25 @@
     if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
 
     if (Keyboard.GetState().IsKeyDown(Keys.Up))
-      _hero.entity.Position
+      Hero.entity.Position
         = new Vector2(
-          _hero.entity.Position.X,
-          _hero.entity.Position.Y - 10);
+          Hero.entity.Position.X,
+          Hero.entity.Position.Y - 10);
     if (Keyboard.GetState().IsKeyDown(Keys.Down))
-      _hero.entity.Position
+      Hero.entity.Position
         = new Vector2(
-          _hero.entity.Position.X,
-          _hero.entity.Position.Y + 10);
+          Hero.entity.Position.X,
+          Hero.entity.Position.Y + 10);
     if (Keyboard.GetState().IsKeyDown(Keys.Left))
-      _hero.entity.Position
+      Hero.entity.Position
         = new Vector2(
-          _hero.entity.Position.X - 10,
-          _hero.entity.Position.Y);
+          Hero.entity.Position.X - 10,
+          Hero.entity.Position.Y);
     if (Keyboard.GetState().IsKeyDown(Keys.Right))
-      _hero.entity.Position
+      Hero.entity.Position
         = new Vector2(
-          _hero.entity.Position.X + 10,
-          _hero.entity.Position.Y);
+          Hero.entity.Position.X + 10,
+          Hero.entity.Position.Y);
 
     if (Keyboard.GetState().IsKeyDown(Keys.F11)) _windowManager.ToggleBorderless();
 
@@ -69,6 +69,8 @@
     GraphicsDevice.Clear(Color.Black);
 
     // USE THIS TO SAMPLE PIXEL PERFECT
+    TextureManager.DrawSquareGrid(_spriteBatch);
+
     _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
     /*
@@ -86,11 +88,11 @@
     _spriteBatch.DrawString(Font.B14px, "[ FONT-B px 14 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 188), Color.OrangeRed);
     */
  
-    _spriteBatch.DrawString(Font.B30px, _hero.entity.Sprite.ToString(), _hero.entity.Position, Color.Red);
+
+    _spriteBatch.DrawString(Font.B30px, Hero.entity.Sprite.ToString(), Hero.entity.Position, Color.Red);
     _spriteBatch.Draw(TextureManager.Textures[0], new Rectangle(10, 10, 64, 192), Color.White);
     _spriteBatch.End();
 
-    TextureManager.DrawSquareGrid(_spriteBatch);
     TextureManager.DrawCircle(96, new Vector2(30f, 30f), Color.White, _spriteBatch);
 
     base.Draw(gameTime);
