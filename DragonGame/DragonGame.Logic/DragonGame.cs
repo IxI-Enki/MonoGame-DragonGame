@@ -59,7 +59,6 @@
           _hero.entity.Position.X + 10,
           _hero.entity.Position.Y);
 
-
     if (Keyboard.GetState().IsKeyDown(Keys.F11)) _windowManager.ToggleBorderless();
 
     base.Update(gameTime);
@@ -86,16 +85,12 @@
     _spriteBatch.DrawString(Font.B16px, "[ FONT-B px 16 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 174), Color.OrangeRed);
     _spriteBatch.DrawString(Font.B14px, "[ FONT-B px 14 ] ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛", new Vector2(10, 188), Color.OrangeRed);
     */
-    _spriteBatch.DrawString(Font.B30px,
-      "\n┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" +
-      "\n┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛",
-      new Vector2(_window.ClientBounds.Width / 3, 158),
-      Color.OrangeRed);
-
+ 
     _spriteBatch.DrawString(Font.B30px, _hero.entity.Sprite.ToString(), _hero.entity.Position, Color.Red);
     _spriteBatch.Draw(TextureManager.Textures[0], new Rectangle(10, 10, 64, 192), Color.White);
     _spriteBatch.End();
 
+    TextureManager.DrawSquareGrid(_spriteBatch);
     TextureManager.DrawCircle(96, new Vector2(30f, 30f), Color.White, _spriteBatch);
 
     base.Draw(gameTime);

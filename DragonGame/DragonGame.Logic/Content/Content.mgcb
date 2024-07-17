@@ -112,6 +112,18 @@
 /processorParam:TextureFormat=Color
 /build:TileSets/32x32circle-white.png
 
+#begin TileSets/32x32square.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:TileSets/32x32square.png
+
 #begin TileSets/48x48nineTiled-wBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -1,9 +1,11 @@
-﻿internal class TextureManager
+﻿using Microsoft.Xna.Framework.Graphics;
+
+internal class TextureManager
 {
   public static List<Texture2D> Textures { get; set; }
-  public static Texture2D Circle;
-
+  public static Texture2D Circle, Square;
   private static string _path = "TileSets\\";
+  private static int scaling => WindowManager.Window.ClientBounds.Width / 32;
 
   private static string TileSetsPath => ReturnPath();
 
@@ -31,6 +33,7 @@
     Textures.Add(texture);
     //
     Circle = dragonGame.Content.Load<Texture2D>(_path + "32x32circle-white");
+    Square = dragonGame.Content.Load<Texture2D>(_path + "32x32square");
   }
 
   internal static void DrawCircle(int d, Vector2 position, Color color, SpriteBatch spriteBatch)
@@ -38,5 +41,18 @@
     spriteBatch.Begin(samplerState: SamplerState.PointClamp);
     spriteBatch.Draw(Circle, new Rectangle((int)position.X, (int)position.Y, d, d), color);
     spriteBatch.End();
+  }
+
+  internal static void DrawSquareGrid(SpriteBatch spriteBatch)
+  {
+    spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+    for (int h = 0; h < WindowManager.Window.ClientBounds.Height; h += scaling)
+      for (int w = 0; w < WindowManager.Window.ClientBounds.Width; w += scaling)
+        if (Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling)
+          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Olive);
+        else
+          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Gray);
+    spriteBatch.End();
+
   }
 }

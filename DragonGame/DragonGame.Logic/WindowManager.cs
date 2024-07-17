@@ -1,10 +1,10 @@
 ﻿public  class WindowManager
 {
-  public WindowManager(ref GameWindow window, ref GraphicsDeviceManager graphics)
+  public WindowManager( ref GameWindow window, ref GraphicsDeviceManager graphics)
   {
-    _window = window;
-    _window.Title = "Drachen-Game";
-    _window.AllowUserResizing = true;
+    Window = window;
+    Window.Title = "Drachen-Game";
+    Window.AllowUserResizing = true;
     _graphics = graphics;
   }
 
@@ -46,8 +46,8 @@
 
   private void SetFullscreen()
   {
-    _width = _window.ClientBounds.Width;
-    _height = _window.ClientBounds.Height;
+    _width = Window.ClientBounds.Width;
+    _height = Window.ClientBounds.Height;
 
     _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
     _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -71,8 +71,10 @@
   private int
     _height = 0,
     _width = 0;
-  private GameWindow
+  private static GameWindow
     _window;
   private GraphicsDeviceManager
     _graphics;
+
+  public static GameWindow Window { get => _window; set => _window = value; }
 }
