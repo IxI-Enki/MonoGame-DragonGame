@@ -36,7 +36,7 @@
   #endregion properties 
 
   #region fields
-  private readonly Point _mapTileSize = new(114, 113);
+  private readonly Point _mapTileSize = new(64,32);
   private readonly Sprite[,] _tiles;
   #endregion fields
 }
