@@ -1,11 +1,6 @@
 ﻿internal class Map
 {
-  private readonly Point _mapTileSize = new(4, 3);
-  private readonly Sprite[,] _tiles;
-
-  public Point TileSize { get; private set; }
-  public Point MapSize { get; private set; }
-
+  #region constructor
   public Map()
   {
     _tiles = new Sprite[_mapTileSize.X, _mapTileSize.Y];
@@ -24,6 +19,7 @@
         _tiles[x, y] = new(textures[r], new(x * TileSize.X, y * TileSize.Y));
       }
   }
+  #endregion constructor
 
   public void Draw()
   {
@@ -31,4 +27,14 @@
       for (int x = 0; x < _mapTileSize.X; x++)
         _tiles[x, y].Draw(); 
   }
+
+  #region properties 
+  public Point TileSize { get; private set; }
+  public Point MapSize { get; private set; }
+  #endregion properties 
+
+  #region fields
+  private readonly Point _mapTileSize = new(4, 3);
+  private readonly Sprite[,] _tiles;
+  #endregion fields
 }

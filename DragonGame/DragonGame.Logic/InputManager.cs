@@ -1,8 +1,5 @@
 ﻿ public static class InputManager
 {
-  private static Vector2 _direction;
-  public static Vector2 Direction => _direction;
-
   public static void Update()
   {
     var keyboardState = Keyboard.GetState();
@@ -13,5 +10,11 @@
     //
     if (_direction != Vector2.Zero) _direction.Normalize();
   }
+
+  // properties:
+  public static Vector2 Direction => _direction;
+  
+  // fields:
+  private static Vector2 _direction;
 }
 

@@ -1,11 +1,12 @@
-﻿ 
-public class GameManager
+﻿public class GameManager
 {
-  private readonly Map _map;
+  #region constructor
   public GameManager()
   {
     _map = new();
   }
+  #endregion constructor
+
   public void Update()
   {
     InputManager.Update();
@@ -17,4 +18,8 @@ public class GameManager
     Globals.SpriteBatch.End();
   }
 
+  #region fields
+  private readonly Map _map;
+
+  #endregion fields
 }
