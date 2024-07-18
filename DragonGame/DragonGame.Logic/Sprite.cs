@@ -1,5 +1,4 @@
-﻿namespace DragonGame.Logic;
-  
+﻿  
 public class Sprite
 {
   private readonly Texture2D _texture;

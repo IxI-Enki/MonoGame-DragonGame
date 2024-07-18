@@ -1,5 +1,4 @@
-﻿namespace DragonGame.Logic;
-internal class Map
+﻿internal class Map
 {
   private readonly Point _mapTileSize = new(4, 3);
   private readonly Sprite[,] _tiles;

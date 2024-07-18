@@ -1,6 +1,4 @@
-﻿namespace DragonGame.Logic;
-
-public static class InputManager
+﻿ public static class InputManager
 {
   private static Vector2 _direction;
   public static Vector2 Direction => _direction;

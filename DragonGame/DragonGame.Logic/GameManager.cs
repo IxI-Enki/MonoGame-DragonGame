@@ -1,4 +1,4 @@
-﻿namespace DragonGame.Logic;
+﻿ 
 public class GameManager
 {
   private readonly Map _map;

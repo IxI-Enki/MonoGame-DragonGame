@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-
-internal class TextureManager
+﻿internal class TextureManager
 {
   public static List<Texture2D> Textures { get; set; }
   public static Texture2D Circle, Square;
@@ -19,7 +17,7 @@ internal class TextureManager
     return newPath.ToString();
   }
 
-  internal static void Load(DragonGame dragonGame)
+  public static void Load(DragonGame dragonGame)
   {
     Textures = new List<Texture2D>();
     Texture2D texture;
@@ -49,8 +47,8 @@ internal class TextureManager
     for (int h = 0; h < WindowManager.Window.ClientBounds.Height; h += scaling)
       for (int w = 0; w < WindowManager.Window.ClientBounds.Width; w += scaling)
       {
-        if (HeroInSquare(w, h))
-          spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.DarkOrange);
+        //   if (HeroInSquare(w, h))
+        //     spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.DarkOrange);
         if (MouseInSquare(w, h))
           spriteBatch.Draw(Square, new Rectangle(w, h, scaling, scaling), Color.Orange);
         else
@@ -59,11 +57,11 @@ internal class TextureManager
     spriteBatch.End();
 
   }
-
+  /*
   private static bool HeroInSquare(int w, int h)
     => Hero.entity.Position.X >= w && Hero.entity.Position.X < w + scaling
     && Hero.entity.Position.Y >= h && Hero.entity.Position.Y < h + scaling;
-
+  */
   private static bool MouseInSquare(int w, int h)
     => Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling
     && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling;

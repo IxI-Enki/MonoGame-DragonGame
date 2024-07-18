@@ -1,6 +1,4 @@
-﻿namespace DragonGame.Logic;
-
-public class Hero : Sprite
+﻿public class Hero : Sprite
 {
   private const float SPEED = 500;
   private Vector2 _minPos, _maxPos;
