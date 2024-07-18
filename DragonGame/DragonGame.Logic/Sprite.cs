@@ -7,7 +7,7 @@
     Position = position;
     Origin = new
     (
-      _texture.Width / 2,
+      texture.Width / 2,
       texture.Height / 2
     );
   }

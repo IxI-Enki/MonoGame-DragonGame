@@ -22,7 +22,7 @@
   #endregion methods
 
   #region fields
-  private const float SPEED = 500;
+  private const float SPEED = 5;
   private Vector2
     _minPos,
     _maxPos;

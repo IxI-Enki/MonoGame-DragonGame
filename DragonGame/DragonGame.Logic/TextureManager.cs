@@ -23,7 +23,7 @@
     StringBuilder newPath = new();
     for (int i = 0; i < pathParts.Length - 3; i++)
       newPath.Append(pathParts[i] + "\\");
-    newPath.Append("bin\\Debug\\net6.0\\Content\\TileSets");
+    newPath.Append("bin\\Debug\\net6.0\\Content\\TileSets\\");
     return newPath.ToString();
   }
   //
