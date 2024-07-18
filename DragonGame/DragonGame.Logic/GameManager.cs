@@ -1,7 +1,11 @@
 ﻿namespace DragonGame.Logic;
 public class GameManager
 {
-  public GameManager() { }
+  private readonly Map _map;
+  public GameManager()
+  {
+    _map = new();
+  }
   public void Update()
   {
     InputManager.Update();
@@ -9,6 +13,7 @@ public class GameManager
   public void Draw()
   {
     Globals.SpriteBatch.Begin();
+    _map.Draw();
     Globals.SpriteBatch.End();
   }
 
