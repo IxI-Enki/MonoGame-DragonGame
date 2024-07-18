@@ -7,13 +7,17 @@
     Content.RootDirectory = "Content";
     IsMouseVisible = true;
     _window = Window;
-    _gameManager = new();
   }
   #endregion constructor
 
   #region overrides
   protected override void Initialize()
   {
+    Globals.Content = Content;
+    _spriteBatch = new(GraphicsDevice);
+    Globals.SpriteBatch = _spriteBatch;
+    _gameManager = new();
+
     _windowManager = new(ref _window, ref _graphics);
     //
     base.Initialize();
@@ -21,7 +25,6 @@
 
   protected override void LoadContent()
   {
-    _spriteBatch = new(GraphicsDevice);
     //
     Font.Load(this);
     TextureManager.Load(this);

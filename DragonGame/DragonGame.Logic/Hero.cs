@@ -1,9 +1,7 @@
 ﻿public class Hero : Sprite
 {
   #region constructor
-  public Hero(Texture2D texture, Vector2 position) : base(texture, position)
-  {
-  }
+  public Hero(Texture2D texture, Vector2 position) : base(texture, position){ }
   #endregion constructor
 
   #region methods

@@ -17,16 +17,20 @@
     Circle = dragonGame.Content.Load<Texture2D>(_path + "32x32circle-white");
     Square = dragonGame.Content.Load<Texture2D>(_path + "32x32square");
   }
-
-  private static string ReturnPath()
+  public static string ReturnPath()
   {
     string[] pathParts = Environment.CurrentDirectory.Split("\\");
     StringBuilder newPath = new();
     for (int i = 0; i < pathParts.Length - 3; i++)
       newPath.Append(pathParts[i] + "\\");
-    newPath.Append("Content\\TileSets\\");
+    newPath.Append("bin\\Debug\\net6.0\\Content\\TileSets");
     return newPath.ToString();
   }
+  //
+  private static bool MouseInSquare(int w, int h)
+    => Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling
+    && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling;
+  //
   internal static void DrawCircle(int d, Vector2 position, Color color, SpriteBatch spriteBatch)
   {
     spriteBatch.Begin(samplerState: SamplerState.PointClamp);
@@ -56,9 +60,6 @@
   #endregion properties
 
   #region fields
-  private static bool MouseInSquare(int w, int h)
-    => Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling
-    && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling;
   private static string _path = "TileSets\\";
   private static int scaling => WindowManager.Window.ClientBounds.Width / 32;
   private static string TileSetsPath => ReturnPath();
