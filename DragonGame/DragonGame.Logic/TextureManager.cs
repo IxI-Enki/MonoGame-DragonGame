@@ -64,10 +64,8 @@ internal class TextureManager
     => Hero.entity.Position.X >= w && Hero.entity.Position.X < w + scaling
     && Hero.entity.Position.Y >= h && Hero.entity.Position.Y < h + scaling;
 
-
   private static bool MouseInSquare(int w, int h)
     => Mouse.GetState().X >= w && Mouse.GetState().X < w + scaling
     && Mouse.GetState().Y >= h && Mouse.GetState().Y < h + scaling;
-
 
 }
