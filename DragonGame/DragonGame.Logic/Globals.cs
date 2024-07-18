@@ -1,9 +1,7 @@
 ﻿public static class Globals
 {
-  public static void Update(GameTime gameTime) 
-  { 
-    Time = (float)gameTime.TotalGameTime.TotalSeconds; 
-  }
+  public static void Update(GameTime gameTime)
+    => Time = (float)gameTime.TotalGameTime.TotalSeconds;
 
   #region properties
   public static float Time { get; set; }

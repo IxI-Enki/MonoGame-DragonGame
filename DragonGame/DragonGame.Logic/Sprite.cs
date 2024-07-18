@@ -1,5 +1,6 @@
 ﻿public class Sprite
 {
+  #region constructor
   public Sprite(Texture2D texture, Vector2 position)
   {
     _texture = texture;
@@ -10,7 +11,9 @@
       texture.Height / 2
     );
   }
+  #endregion constructor
 
+  #region methods
   public void Draw() => Globals.SpriteBatch.Draw
   (
     _texture,
@@ -23,6 +26,7 @@
     SpriteEffects.None,
     0f
   );
+  #endregion methods
 
   #region properties
   public Vector2 Position { get; protected set; }

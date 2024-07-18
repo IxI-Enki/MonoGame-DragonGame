@@ -1,16 +1,5 @@
 ﻿public class DragonGame : Game
 {
-  #region fields
-  private GraphicsDeviceManager _graphics;
-  private SpriteBatch _spriteBatch;
-  //
-  private WindowManager _windowManager;
-  private TileManager _tileManager;
-  private GameWindow _window;
-  //
-  private GameManager _gameManager;
-  #endregion fields
-
   #region constructor
   public DragonGame()
   {
@@ -68,6 +57,17 @@
     base.Draw(gameTime);
   }
   #endregion overrides
+
+  #region fields
+  private GraphicsDeviceManager _graphics;
+  private SpriteBatch _spriteBatch;
+  //
+  private WindowManager _windowManager;
+  private TileManager _tileManager;
+  private GameWindow _window;
+  //
+  private GameManager _gameManager;
+  #endregion fields
 }
 
 #region outdated

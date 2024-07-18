@@ -1,13 +1,16 @@
-﻿public  class WindowManager
+﻿public class WindowManager
 {
-  public WindowManager( ref GameWindow window, ref GraphicsDeviceManager graphics)
+  #region constructor
+  public WindowManager(ref GameWindow window, ref GraphicsDeviceManager graphics)
   {
     Window = window;
     Window.Title = "Drachen-Game";
     Window.AllowUserResizing = true;
     _graphics = graphics;
   }
+  #endregion constructor
 
+  #region methods
   public void ToggleFullscreen()
   {
     bool oldIsFullscreen = _isFullscreen;
@@ -64,7 +67,13 @@
     _graphics.IsFullScreen = false;
     _graphics.ApplyChanges();
   }
+  #endregion methods
 
+  #region properties
+  public static GameWindow Window { get => _window; set => _window = value; }
+  #endregion properties
+
+  #region fields
   private bool
     _isFullscreen = false,
     _isBorderless = false;
@@ -75,6 +84,5 @@
     _window;
   private GraphicsDeviceManager
     _graphics;
-
-  public static GameWindow Window { get => _window; set => _window = value; }
+  #endregion fields
 }

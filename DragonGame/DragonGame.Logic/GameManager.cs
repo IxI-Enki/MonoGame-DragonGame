@@ -7,6 +7,7 @@
   }
   #endregion constructor
 
+  #region methods
   public void Update()
   {
     InputManager.Update();
@@ -17,6 +18,7 @@
     _map.Draw();
     Globals.SpriteBatch.End();
   }
+  #endregion methods
 
   #region fields
   private readonly Map _map;

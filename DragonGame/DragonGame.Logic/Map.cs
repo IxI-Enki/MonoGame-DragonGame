@@ -21,12 +21,14 @@
   }
   #endregion constructor
 
+  #region methods
   public void Draw()
   {
     for (int y = 0; y < _mapTileSize.Y; y++)
       for (int x = 0; x < _mapTileSize.X; x++)
         _tiles[x, y].Draw(); 
   }
+  #endregion methods
 
   #region properties 
   public Point TileSize { get; private set; }

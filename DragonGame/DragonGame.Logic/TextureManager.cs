@@ -1,5 +1,6 @@
 ﻿internal class TextureManager
 {
+  #region methods
   public static void Load(DragonGame dragonGame)
   {
     Textures = new List<Texture2D>();
@@ -17,7 +18,6 @@
     Square = dragonGame.Content.Load<Texture2D>(_path + "32x32square");
   }
 
-  #region methods
   private static string ReturnPath()
   {
     string[] pathParts = Environment.CurrentDirectory.Split("\\");

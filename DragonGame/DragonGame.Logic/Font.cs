@@ -1,15 +1,6 @@
 ﻿internal class Font
 {
-  public static SpriteFont A14px { get; private set; }
-  public static SpriteFont A16px { get; private set; }
-  public static SpriteFont A18px { get; private set; }
-  public static SpriteFont A20px { get; private set; }
-  public static SpriteFont B14px { get; private set; }
-  public static SpriteFont B16px { get; private set; }
-  public static SpriteFont B18px { get; private set; }
-  public static SpriteFont B20px { get; private set; }
-  public static SpriteFont B30px { get; private set; }
-
+  #region methods
   internal static void Load(DragonGame dragonGame)
   {
     A14px
@@ -40,4 +31,17 @@
       = dragonGame.Content.Load
         <SpriteFont>("fontB30px");
   }
+  #endregion methods
+
+  #region properties
+  public static SpriteFont A14px { get; private set; }
+  public static SpriteFont A16px { get; private set; }
+  public static SpriteFont A18px { get; private set; }
+  public static SpriteFont A20px { get; private set; }
+  public static SpriteFont B14px { get; private set; }
+  public static SpriteFont B16px { get; private set; }
+  public static SpriteFont B18px { get; private set; }
+  public static SpriteFont B20px { get; private set; }
+  public static SpriteFont B30px { get; private set; }
+  #endregion properties
 }
