@@ -31,7 +31,7 @@
       = dragonGame.Content.Load
         <SpriteFont>("fontB30px");
   }
-  #endregion methods
+  #endregion  
 
   #region properties
   public static SpriteFont A14px { get; private set; }
@@ -43,5 +43,5 @@
   public static SpriteFont B18px { get; private set; }
   public static SpriteFont B20px { get; private set; }
   public static SpriteFont B30px { get; private set; }
-  #endregion properties
+  #endregion  
 }

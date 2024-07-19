@@ -8,7 +8,7 @@
     Window.AllowUserResizing = true;
     _graphics = graphics;
   }
-  #endregion constructor
+  #endregion  
 
   #region methods
   public void ToggleFullscreen()
@@ -67,11 +67,11 @@
     _graphics.IsFullScreen = false;
     _graphics.ApplyChanges();
   }
-  #endregion methods
+  #endregion  
 
   #region properties
   public static GameWindow Window { get => _window; set => _window = value; }
-  #endregion properties
+  #endregion  
 
   #region fields
   private bool
@@ -80,9 +80,7 @@
   private int
     _height = 0,
     _width = 0;
-  private static GameWindow
-    _window;
-  private GraphicsDeviceManager
-    _graphics;
-  #endregion fields
+  private static GameWindow _window;
+  private GraphicsDeviceManager _graphics;
+  #endregion  
 }

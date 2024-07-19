@@ -1,80 +1,81 @@
 ﻿public class DragonGame : Game
 {
-    #region constructor
-    public DragonGame()
-    {
-        _graphics = new(this);
-        Content.RootDirectory = "Content";
-        IsMouseVisible = true;
-        _window = Window;
-    }
-    #endregion constructor
+  #region constructor
+  public DragonGame()
+  {
+    _graphics = new(this);
+    Content.RootDirectory = "Content";
+    IsMouseVisible = true;
+    _window = Window;
+  }
+  #endregion
 
-    #region overrides
-    protected override void Initialize()
-    {
-        Globals.WindowSize = new(1024, 768);
-        _graphics.PreferredBackBufferWidth = Globals.WindowSize.X;
-        _graphics.PreferredBackBufferHeight = Globals.WindowSize.Y;
-        _graphics.ApplyChanges();
-        //
-        Globals.Content = Content;
-        _gameManager = new();
-        //
-        _windowManager = new(ref _window, ref _graphics);
-        //
-        base.Initialize();
-    }
+  #region overrides
+  protected override void Initialize()
+  {
+    Globals.WindowSize = new(512, 512);
+    _graphics.PreferredBackBufferWidth = Globals.WindowSize.X;
+    _graphics.PreferredBackBufferHeight = Globals.WindowSize.Y;
+    _graphics.ApplyChanges();
 
-    protected override void LoadContent()
-    {
-        _spriteBatch = new(GraphicsDevice);
-        Globals.SpriteBatch = _spriteBatch;
-        //
-        Font.Load(this);
-        TextureManager.Load(this);
-        //
-        _tileManager = new();
-    }
-
-    protected override void Update(GameTime gameTime)
-    {
-        //
-        if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
-        if (Keyboard.GetState().IsKeyDown(Keys.F11)) _windowManager.ToggleBorderless();
-        Globals.Update(gameTime);
-        _gameManager.Update();
-        //
-        base.Update(gameTime);
-    }
-
-    protected override void Draw(GameTime gameTime)
-    {
-        GraphicsDevice.Clear(Color.Black);
-        //
-        _gameManager.Draw();
-
-        // USE THIS TO SAMPLE PIXEL PERFECT
-     /*   _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        _spriteBatch.End();
-        //
-        TextureManager.DrawCircle(96, new Vector2(30f, 30f), Color.White, _spriteBatch);
-        TextureManager.DrawSquareGrid(_spriteBatch);
-       */ //
-        base.Draw(gameTime);
-    }
-    #endregion overrides
-
-    #region fields
-    private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
+    Globals.Content = Content;
+    _gameManager = new();
     //
-    private WindowManager _windowManager;
-    private TileManager _tileManager;
-    private GameWindow _window;
+    _windowManager = new(ref _window, ref _graphics);
     //
-    private GameManager _gameManager;
-    #endregion fields
+    base.Initialize();
+  }
+
+  protected override void LoadContent()
+  {
+    _spriteBatch = new(GraphicsDevice);
+    Globals.SpriteBatch = _spriteBatch;
+    //
+    Font.Load(this);
+    TextureManager.Load(this);
+    //
+    _tileManager = new();
+  }
+
+  protected override void Update(GameTime gameTime)
+  {
+    //
+    if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
+    if (Keyboard.GetState().IsKeyDown(Keys.F11)) _windowManager.ToggleBorderless();
+    Globals.Update(gameTime);
+    _gameManager.Update();
+    //
+    base.Update(gameTime);
+  }
+
+  protected override void Draw(GameTime gameTime)
+  {
+    GraphicsDevice.Clear(Color.Black);
+    //
+    _gameManager.Draw();
+
+    // USE THIS TO SAMPLE PIXEL PERFECT
+    /* _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+    *  _spriteBatch.End();
+    *
+    *  TextureManager.DrawCircle(96, new Vector2(30f, 30f), Color.White, _spriteBatch);
+    *  TextureManager.DrawSquareGrid(_spriteBatch);
+    */
+
+    base.Draw(gameTime);
+  }
+  #endregion
+
+  #region fields
+  private GraphicsDeviceManager _graphics;
+  private SpriteBatch _spriteBatch;
+  //
+  private WindowManager _windowManager;
+  private TileManager _tileManager;
+  private GameWindow _window;
+  //
+  private GameManager _gameManager;
+  #endregion
 }
 
 #region outdated

@@ -8,5 +8,5 @@
   public static ContentManager Content { get; set; }
   public static SpriteBatch SpriteBatch { get; set; }
   public static Point WindowSize { get; set; }
-  #endregion properties
+  #endregion  
 }

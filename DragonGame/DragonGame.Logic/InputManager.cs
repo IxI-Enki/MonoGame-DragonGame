@@ -13,13 +13,13 @@
     //
     if (_direction != Vector2.Zero) _direction.Normalize();
   }
-  #endregion methods
+  #endregion  
 
   #region properties
   public static Vector2 Direction => _direction;
-  #endregion properties
+  #endregion  
 
   #region fields
   private static Vector2 _direction;
-  #endregion fields
+  #endregion  
 }

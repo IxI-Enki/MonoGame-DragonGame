@@ -3,16 +3,17 @@
   #region methods
   public static void Load(DragonGame dragonGame)
   {
-    Textures = new List<Texture2D>();
-    Texture2D texture;
-    texture = dragonGame.Content.Load<Texture2D>(_path + "16x48threeTiled");
-    Textures.Add(texture);
-    texture = dragonGame.Content.Load<Texture2D>(_path + "16x48threeTiled-wBackground");
-    Textures.Add(texture);
-    texture = dragonGame.Content.Load<Texture2D>(_path + "48x48nineTiled");
-    Textures.Add(texture);
-    texture = dragonGame.Content.Load<Texture2D>(_path + "48x48nineTiled-wBackground");
-    Textures.Add(texture);
+    string[] _textures = [
+      "16x48threeTiled",
+      "16x48threeTiled-wBackground",
+      "48x48nineTiled",
+      "48x48nineTiled-wBackground"
+      ];
+
+    Textures = [];
+    foreach (string s in _textures)
+      Textures.Add(dragonGame.Content.Load<Texture2D>(_path + s));
+
     //
     Circle = dragonGame.Content.Load<Texture2D>(_path + "32x32circle-white");
     Square = dragonGame.Content.Load<Texture2D>(_path + "32x32square");
@@ -52,18 +53,18 @@
       }
     spriteBatch.End();
   }
-  #endregion methods
+  #endregion  
 
   #region properties
   public static List<Texture2D> Textures { get; set; }
   public static Texture2D Circle, Square;
-  #endregion properties
+  #endregion  
 
   #region fields
   private static string _path = "TileSets\\";
   private static int scaling => WindowManager.Window.ClientBounds.Width / 32;
   private static string TileSetsPath => ReturnPath();
-  #endregion fields
+  #endregion  
 }
 
 #region outdated
