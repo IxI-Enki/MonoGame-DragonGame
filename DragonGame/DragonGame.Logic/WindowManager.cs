@@ -70,7 +70,11 @@
   #endregion  
 
   #region properties
-  public static GameWindow Window { get => _window; set => _window = value; }
+  public static GameWindow Window 
+  { 
+    get => _window; 
+    set => _window = value; 
+  }
   #endregion  
 
   #region fields

@@ -21,15 +21,21 @@
     Globals.Content = Content;
     _gameManager = new();
     //
-    _windowManager = new(ref _window, ref _graphics);
+    _windowManager
+      = new(
+        ref _window,
+        ref _graphics
+        );
     //
     base.Initialize();
   }
 
   protected override void LoadContent()
   {
-    _spriteBatch = new(GraphicsDevice);
-    Globals.SpriteBatch = _spriteBatch;
+    _spriteBatch 
+      = new(GraphicsDevice);
+    Globals.SpriteBatch 
+      = _spriteBatch;
     //
     Font.Load(this);
     TextureManager.Load(this);

@@ -6,9 +6,9 @@
     _tiles = new Sprite[_mapTileSize.X, _mapTileSize.Y];
     List<Texture2D> textures = new(5);   // 5 different textureTiles
     for (int i = 1; i < 6; i++)
-      textures.Add
-      (Globals.Content.Load<Texture2D>
-        ($"{TextureManager.ReturnPath()}tile{i}"));
+      textures.Add(
+        Globals.Content.Load<Texture2D>(
+          $"{TextureManager.ReturnPath()}tile{i}"));
 
     TileSize = new(textures[0].Width, textures[0].Height);
     MapSize = new(TileSize.X * _mapTileSize.X, TileSize.Y * _mapTileSize.Y);

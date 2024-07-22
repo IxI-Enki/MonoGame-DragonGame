@@ -3,8 +3,14 @@
   #region methods
   public void SetBounds(Point mapSize, Point tileSize)
   {
-    _minPos = new((-tileSize.X / 2) + Origin.X, (-tileSize.Y / 2) + Origin.Y);
-    _maxPos = new(mapSize.X - (tileSize.X / 2) - Origin.X, mapSize.Y - (tileSize.X / 2) - Origin.Y);
+    _minPos = new(
+      (-tileSize.X / 2) + Origin.X,
+      (-tileSize.Y / 2) + Origin.Y
+      );
+    _maxPos = new(
+      mapSize.X - (tileSize.X / 2) - Origin.X,
+      mapSize.Y - (tileSize.X / 2) - Origin.Y
+      );
   }
 
   public void Update()
@@ -16,7 +22,9 @@
 
   #region fields
   private const float SPEED = 350;
-  private Vector2 _minPos, _maxPos;
+  private Vector2
+    _minPos,
+    _maxPos;
   #endregion
 }
 
